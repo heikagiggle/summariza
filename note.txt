@@ -1,0 +1,8 @@
+Project:
+A Next.js app that connects to OpenAI's API to summarize PDF documents.
+Converta is prototype that uploads and summarizes PDF documents using Next.js and the OpenAI API
+
+steps
+After setting up nextjs
+npm install openai unpdf
+
