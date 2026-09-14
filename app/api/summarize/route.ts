@@ -3,7 +3,7 @@ import OpenAI from "openai";
 import { extractText, getDocumentProxy } from "unpdf";
 
 const localAI = new OpenAI({
-  baseURL: process.env.OPENAI_BASE_URL || "http://localhost:11434/v1",
+  baseURL: process.env.NEXT_PUBLIC_AI_BASE_URL || "http://localhost:11434/v1",
   apiKey: process.env.OPENAI_API_KEY || "ollama-local-infrastructure",
 });
 
