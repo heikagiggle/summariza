@@ -6,3 +6,7 @@ steps
 After setting up nextjs
 npm install openai unpdf
 
+usingRAG
+npm install @lancedb/lancedb langchain @langchain/community --legacy-peer-deps, used --legacy-peers-deps to resolve the dependency tree version conflict caused because LangChain is strict about checking the exact version numbers of my installed packages (like openai)
+ollama pull nomic-embed-text in powershell terminal
+

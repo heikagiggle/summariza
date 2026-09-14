@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@lancedb/lancedb": "^0.38.0",
+    "@langchain/community": "^1.1.29",
+    "langchain": "^1.5.11",
     "next": "16.3.4",
     "openai": "^7.12.1",
     "react": "19.2.8",

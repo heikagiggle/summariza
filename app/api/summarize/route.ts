@@ -3,8 +3,8 @@ import OpenAI from "openai";
 import { extractText, getDocumentProxy } from "unpdf";
 
 const localAI = new OpenAI({
-  baseURL: "http://localhost:11434/v1",
-  apiKey: "ollama-local-infrastructure",
+  baseURL: process.env.OPENAI_BASE_URL || "http://localhost:11434/v1",
+  apiKey: process.env.OPENAI_API_KEY || "ollama-local-infrastructure",
 });
 
 export async function POST(req: NextRequest) {
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     const arrayBuffer = await file.arrayBuffer();
     const uint8Array = new Uint8Array(arrayBuffer);
 
-    // Loading the PDF and extract text
+    // Loading the PDF and extracting text
     const pdf = await getDocumentProxy(uint8Array);
     const { text } = await extractText(pdf, { mergePages: true });
 
