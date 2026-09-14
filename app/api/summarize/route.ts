@@ -5,6 +5,9 @@ import { extractText, getDocumentProxy } from "unpdf";
 const localAI = new OpenAI({
   baseURL: process.env.NEXT_PUBLIC_AI_BASE_URL || "http://localhost:11434/v1",
   apiKey: process.env.OPENAI_API_KEY || "ollama-local-infrastructure",
+   defaultHeaders: {
+    'ngrok-skip-browser-warning': 'true',
+  },
 });
 
 export async function POST(req: NextRequest) {

@@ -4,6 +4,9 @@ import OpenAI from "openai";
 const localAI = new OpenAI({
   baseURL: process.env.NEXT_PUBLIC_AI_BASE_URL || "http://localhost:11434/v1",
   apiKey: process.env.OPENAI_API_KEY || "ollama-local-infrastructure",
+  defaultHeaders: {
+    "ngrok-skip-browser-warning": "true",
+  },
 });
 
 function chunkText(text: string, maxCharacters = 1000): string[] {
